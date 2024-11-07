@@ -51,13 +51,19 @@ function MyWork() {
                   className="w-full min-h-full rounded-lg"
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                 />
               </div>
               <div className="flex items-center justify-between px-2 mt-1">
                 <div className="text-lg font-medium">{item.title}</div>
                 <div className="flex items-center gap-4">
                   <a href={item.repo} target="_blank" className="rounde-full">
-                    <img className="w-6" src="/github.svg" alt="github" />
+                    <img
+                      className="w-6"
+                      src="/github.svg"
+                      alt="github"
+                      loading="lazy"
+                    />
                   </a>
                   <a href={item.link} target="_blank" className="rounded-full">
                     <svg

@@ -76,11 +76,7 @@ function Header() {
   }, []);
 
   return (
-    <header
-      id="home"
-      className="bg-cover bg-fixed flex flex-col"
-      style={{ backgroundImage: "url(/pic1.jpg)", backgroundPosition: "50%" }}
-    >
+    <header id="home" className="flex flex-col">
       <div className="relative mx-auto w-full min-h-screen flex flex-col max-w-screen-xl px-4 xm:px-8 text-white">
         <nav className="border-b-2 flex items-center justify-between">
           <a href="/">

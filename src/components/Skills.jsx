@@ -93,7 +93,7 @@ function Skills() {
                   target="_blank"
                   className="group hover:relative w-full h-full p-2 md:p-4 bg-white rounded-md hover:scale-95"
                 >
-                  <img src={item.url} alt={item.name} />
+                  <img src={item.url} alt={item.name} loading="lazy" />
                 </a>
               ))}
             </div>

@@ -2,8 +2,7 @@ function Footer() {
   return (
     <footer
       id="get-in-touch"
-      className="relative bg-cover bg-fixed"
-      style={{ backgroundImage: "url(/pic2.jpg)", backgroundPosition: "50%" }}
+      className="relative"
     >
       <div className="mx-auto min-h-screen max-w-screen-xl flex items-center justify-center px-4 xm:px-8 md:px-16 py-8 xm:py-16">
         <div
