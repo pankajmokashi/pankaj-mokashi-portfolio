@@ -20,11 +20,13 @@ footer {
   header {
     --background-image-lazy: url("/header-mobile.jpg");
     background-image: var(--background-image-lazy);
+    background-attachment: inital !important;
   }
 
   footer {
     --background-image-lazy: url("/footer-mobile.jpg");
     background-image: var(--background-image-lazy);
+    background-attachment: inital !important;
   }
 }
 
