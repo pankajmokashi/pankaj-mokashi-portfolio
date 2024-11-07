@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 header {
-  --background-image-lazy: url("/pic1.jpg");
+  --background-image-lazy: url("/header-desktop.jpg");
   background-image: var(--background-image-lazy);
   background-size: cover;
   background-position: 50%;
@@ -9,20 +9,22 @@ header {
 }
 
 footer {
-  --background-image-lazy: url("/pic2.jpg");
+  --background-image-lazy: url("/footer-desktop.jpg");
   background-image: var(--background-image-lazy);
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 640px) {
   header {
-    --background-image-lazy: url("/pic4.jpg");
+    --background-image-lazy: url("/header-mobile.jpg");
+    background-image: var(--background-image-lazy);
   }
 
   footer {
-    --background-image-lazy: url("/pic6.jpg");
+    --background-image-lazy: url("/footer-mobile.jpg");
+    background-image: var(--background-image-lazy);
   }
 }
 
