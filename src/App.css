@@ -5,7 +5,6 @@ header {
   background-image: var(--background-image-lazy);
   background-size: cover;
   background-position: 50%;
-  background-attachment: fixed;
 }
 
 footer {
@@ -13,24 +12,17 @@ footer {
   background-image: var(--background-image-lazy);
   background-size: cover;
   background-position: 50%;
-  background-attachment: fixed;
 }
 
 @media screen and (max-width: 640px) {
   header {
     --background-image-lazy: url("/header-mobile.jpg");
     background-image: var(--background-image-lazy);
-    background-size: cover; 
-    background-position: 50%;
-    background-attachment: scroll;
   }
 
   footer {
     --background-image-lazy: url("/footer-mobile.jpg");
     background-image: var(--background-image-lazy);
-    background-size: cover; 
-    background-position: 50%;
-    background-attachment: scroll; 
   }
 }
 
