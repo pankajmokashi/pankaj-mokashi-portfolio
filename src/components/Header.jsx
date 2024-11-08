@@ -24,10 +24,14 @@ const navLinks = [
   },
 ];
 
-export function NavLink({ data }) {
+export function NavLink({ data, handleClick }) {
   return (
-    <li className="p-4 lg:p-6">
-      <a href={data.link} className="hover:opacity-60">
+    <li className="w-full md:w-auto">
+      <a
+        href={data.link}
+        className="block p-4 lg:p-6 text-center border-b border-gray-500 md:border-b-0 hover:opacity-60"
+        onClick={handleClick}
+      >
         {data.name}
       </a>
     </li>
@@ -39,15 +43,12 @@ NavLink.propTypes = {
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
   }),
+  handleClick: PropTypes.func,
 };
 
 function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev);
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -75,10 +76,17 @@ function Header() {
     };
   }, []);
 
+  const handleClick = () => {
+    setDropdownOpen(false);
+  };
+
   return (
     <header id="home" className="flex flex-col">
       <div className="relative mx-auto w-full min-h-screen flex flex-col max-w-screen-xl px-4 xm:px-8 text-white">
-        <nav className="border-b-2 flex items-center justify-between">
+        <nav
+          ref={dropdownRef}
+          className="border-b-2 flex items-center justify-between"
+        >
           <a href="/">
             <img className="w-16 h-16" src="logo.png" alt="logo" />
           </a>
@@ -88,7 +96,7 @@ function Header() {
             ))}
           </ul>
           <button
-            onClick={toggleDropdown}
+            onClick={() => setDropdownOpen(!dropdownOpen)}
             className="md:hidden cursor-pointer p-4 lg:p-6"
           >
             <svg
@@ -101,6 +109,13 @@ function Header() {
               <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
             </svg>
           </button>
+          {dropdownOpen && (
+            <ul className="absolute top-16 left-0 right-0 flex md:hidden flex-col items-center justify-center text-sm bg-[#202020] font-bold">
+              {navLinks.map((item, ind) => (
+                <NavLink key={ind} data={item} handleClick={handleClick} />
+              ))}
+            </ul>
+          )}
         </nav>
         <div
           style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
@@ -111,16 +126,6 @@ function Header() {
           </h1>
           <div className="text-xl font-medium">Web Developer</div>
         </div>
-        {dropdownOpen && (
-          <ul
-            ref={dropdownRef}
-            className="absolute top-16 left-0 right-0 flex md:hidden flex-col items-center justify-center text-sm bg-[#cabdbd] font-bold"
-          >
-            {navLinks.map((item, ind) => (
-              <NavLink key={ind} data={item} />
-            ))}
-          </ul>
-        )}
       </div>
     </header>
   );
