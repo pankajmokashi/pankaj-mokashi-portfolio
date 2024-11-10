@@ -17,7 +17,7 @@ function Resume() {
   }
 
   const handleDownload = () => {
-    saveAs("/Pankaj-Mokashi-Resume.pdf", "Pankaj-Mokashi-Resume"); // Triggers the download of the file
+    saveAs("/Pankaj-Resume.pdf", "Pankaj-Mokashi-Resume"); // Triggers the download of the file
   };
 
   return (
@@ -42,7 +42,7 @@ function Resume() {
           <div className="absolute top-10 bottom-10 left-2 sm:left-10 right-2 sm:right-10 bg-white text-black rounded-xl p-2 py-16 sm:p-16">
             <div className="w-full h-full overflow-auto">
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-                <Viewer fileUrl="/Pankaj-Mokashi-Resume.pdf" />
+                <Viewer fileUrl="/Pankaj-Resume.pdf" />
               </Worker>
             </div>
             <div className="absolute top-0 right-12 m-2 flex items-center">
